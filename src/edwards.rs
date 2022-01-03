@@ -107,7 +107,7 @@ use subtle::ConditionallyNegatable;
 use subtle::ConditionallySelectable;
 use subtle::ConstantTimeEq;
 
-use zeroize::Zeroize;
+//use zeroize::Zeroize;
 
 use constants;
 
@@ -380,7 +380,7 @@ impl Default for EdwardsPoint {
 // ------------------------------------------------------------------------
 // Zeroize implementations for wiping points from memory
 // ------------------------------------------------------------------------
-
+/*
 impl Zeroize for CompressedEdwardsY {
     /// Reset this `CompressedEdwardsY` to the compressed form of the identity element.
     fn zeroize(&mut self) {
@@ -398,7 +398,7 @@ impl Zeroize for EdwardsPoint {
         self.T.zeroize();
     }
 }
-
+*/
 // ------------------------------------------------------------------------
 // Validity checks (for debugging, not CT)
 // ------------------------------------------------------------------------

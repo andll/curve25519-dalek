@@ -14,7 +14,7 @@
 use core::fmt::Debug;
 use core::ops::{Index, IndexMut};
 
-use zeroize::Zeroize;
+//use zeroize::Zeroize;
 
 use constants;
 
@@ -28,13 +28,13 @@ impl Debug for Scalar52 {
         write!(f, "Scalar52: {:?}", &self.0[..])
     }
 }
-
+/*
 impl Zeroize for Scalar52 {
     fn zeroize(&mut self) {
         self.0.zeroize();
     }
 }
-
+*/
 impl Index<usize> for Scalar52 {
     type Output = u64;
     fn index(&self, _index: usize) -> &u64 {

@@ -26,7 +26,7 @@ use edwards::EdwardsPoint;
 use backend::serial::curve_models::ProjectiveNielsPoint;
 use backend::serial::curve_models::AffineNielsPoint;
 
-use zeroize::Zeroize;
+//use zeroize::Zeroize;
 
 macro_rules! impl_lookup_table {
     (Name = $name:ident, Size = $size:expr, SizeNeg = $neg:expr, SizeRange = $range:expr, ConversionRange = $conv_range:expr) => {
@@ -112,7 +112,7 @@ impl<'a> From<&'a EdwardsPoint> for $name<AffineNielsPoint> {
         $name(points)
     }
 }
-
+/*
 impl<T> Zeroize for $name<T>
 where
     T: Copy + Default + Zeroize
@@ -123,7 +123,7 @@ where
         }
     }
 }
-
+*/
 }}  // End macro_rules! impl_lookup_table
 
 // The first one has to be named "LookupTable" because it's used as a constructor for consts.

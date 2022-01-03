@@ -62,7 +62,7 @@ use subtle::Choice;
 use subtle::ConstantTimeEq;
 use subtle::{ConditionallyNegatable, ConditionallySelectable};
 
-use zeroize::Zeroize;
+//use zeroize::Zeroize;
 
 /// Holds the \\(u\\)-coordinate of a point on the Montgomery form of
 /// Curve25519 or its twist.
@@ -100,13 +100,13 @@ impl Identity for MontgomeryPoint {
         MontgomeryPoint([0u8; 32])
     }
 }
-
+/*
 impl Zeroize for MontgomeryPoint {
     fn zeroize(&mut self) {
         self.0.zeroize();
     }
 }
-
+*/
 impl MontgomeryPoint {
     /// View this `MontgomeryPoint` as an array of bytes.
     pub fn as_bytes<'a>(&'a self) -> &'a [u8; 32] {

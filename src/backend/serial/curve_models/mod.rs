@@ -129,7 +129,7 @@ use core::ops::{Add, Neg, Sub};
 use subtle::Choice;
 use subtle::ConditionallySelectable;
 
-use zeroize::Zeroize;
+//use zeroize::Zeroize;
 
 use constants;
 
@@ -184,7 +184,7 @@ pub struct AffineNielsPoint {
     pub y_minus_x: FieldElement,
     pub xy2d:      FieldElement,
 }
-
+/*
 impl Zeroize for AffineNielsPoint {
     fn zeroize(&mut self) {
         self.y_plus_x.zeroize();
@@ -192,7 +192,7 @@ impl Zeroize for AffineNielsPoint {
         self.xy2d.zeroize();
     }
 }
-
+*/
 /// A pre-computed point on the \\( \mathbb P\^3 \\) model for the
 /// curve, represented as \\((Y+X, Y-X, Z, 2dXY)\\) in "Niels coordinates".
 ///
@@ -205,7 +205,7 @@ pub struct ProjectiveNielsPoint {
     pub Z:         FieldElement,
     pub T2d:       FieldElement,
 }
-
+/*
 impl Zeroize for ProjectiveNielsPoint {
     fn zeroize(&mut self) {
         self.Y_plus_X.zeroize();
@@ -214,7 +214,7 @@ impl Zeroize for ProjectiveNielsPoint {
         self.T2d.zeroize();
     }
 }
-
+*/
 // ------------------------------------------------------------------------
 // Constructors
 // ------------------------------------------------------------------------

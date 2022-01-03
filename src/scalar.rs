@@ -161,7 +161,7 @@ use subtle::Choice;
 use subtle::ConditionallySelectable;
 use subtle::ConstantTimeEq;
 
-use zeroize::Zeroize;
+//use zeroize::Zeroize;
 
 use backend;
 use constants;
@@ -533,13 +533,13 @@ impl From<u128> for Scalar {
         Scalar{ bytes: s_bytes }
     }
 }
-
+/*
 impl Zeroize for Scalar {
     fn zeroize(&mut self) {
         self.bytes.zeroize();
     }
 }
-
+*/
 impl Scalar {
     /// Return a `Scalar` chosen uniformly at random using a user-provided RNG.
     ///
@@ -776,7 +776,7 @@ impl Scalar {
         // externally, but there's no corresponding distinction for
         // field elements.
 
-        use zeroize::Zeroizing;
+        //use zeroize::Zeroizing;
 
         let n = inputs.len();
         let one: UnpackedScalar = Scalar::one().unpack().to_montgomery();
@@ -784,7 +784,7 @@ impl Scalar {
         // Place scratch storage in a Zeroizing wrapper to wipe it when
         // we pass out of scope.
         let scratch_vec = vec![one; n];
-        let mut scratch = Zeroizing::new(scratch_vec);
+        let mut scratch = scratch_vec;
 
         // Keep an accumulator of all of the previous products
         let mut acc = Scalar::one().unpack().to_montgomery();
